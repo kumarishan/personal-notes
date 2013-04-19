@@ -63,3 +63,8 @@ lemmatization
 relation finding  
 prepositional phrase attachement  
 trained on data from WSJ  
+
+ultraslicklsa
+-------------
+__python__
+LSA module for making search queries  

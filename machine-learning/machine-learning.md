@@ -14,7 +14,7 @@ __python__
  - Partial Least Square
  - Naive Bayes
  - Decision Trees
- - Ensemble Methods - Random Forrest
+ - Ensemble Methods - Random Forrest, Bootstrapping
  - Multiclass and Multilabel
  - Feature Selection/Dimensionality Reduction
  - Semi Supervised - Label Propagation
@@ -29,3 +29,8 @@ __python__
  - Covariance Estimation
  - Novelty Outlier Detection
  - Hidden Markov Model
+
+EBLearn
+-------
+__c++__  
+liblearn - energy based learning in c++  
