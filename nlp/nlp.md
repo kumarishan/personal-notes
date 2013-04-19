@@ -39,3 +39,27 @@ parsing
 coreference resolution  
 document categorization  
 machine learning - maximum entropy modelling  
+
+Pattern
+-------
+__python__  
+data retrieval from Google, Wikipedia, Twitte, Bing, etc  
+text analysis - Rule based shallow parser, wordnet interface  
+syntactical and semantical n-gram search algorithm  
+tf-idf + cosine similarity  
+LSA metrics  
+clustering & classification  
+data visualization  
+
+MBSP
+----
+__python__  
+text analysis based on TiMBL & MBT - memory based learning application  
+tokenization  
+sentence splitting  
+POS tagging  
+chunking  
+lemmatization  
+relation finding  
+prepositional phrase attachement  
+trained on data from WSJ  
