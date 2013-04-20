@@ -1,16 +1,18 @@
+
 Natural Language Processing related stuffs
 ==========================================
 
 Semantic Similarity
 -------------------
 __Topological similarity__ - graph based  
-between ontological concepts  
-  - Edge based
-  - Node based
 
-between ontological instances  
-  - Pairwise
-  - Groupwise
+_between ontological concepts_s  
+Edge based  
+Node based  
+
+_between ontological instances_  
+Pairwise  
+Groupwise  
 
 __Statistical Similarity__  
 LSA  

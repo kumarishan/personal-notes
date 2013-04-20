@@ -66,15 +66,15 @@ trained on data from WSJ
 
 ultraslicklsa
 -------------
-__python__
+__python__  
 LSA module for making search queries  
 
 Semantic Measure Libraries and Toolkit
 --------------------------------------
-__java__
+__java__  
 Graph based similarity measures  
 
 DISCO - Distributionally related words using Co occurences
 ----------------------------------------------------------
-__java__
+__java__  
 Semantic similarity using statistical measures  
