@@ -18,6 +18,7 @@ Add and move them as you go on
 Use Sublime Text 2 while taking or navigating through notes  
 As its Goto Anything feature helps navigate to any point of notes almost instantly  
 Sublime Text 3's indesing feature will help better  
+What learned previosuly will be written eventually  
 
 Maybe Gist is a better way to do this  
 But by this i can completely controll how i want it to be organized and very quick to start  

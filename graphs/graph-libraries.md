@@ -26,10 +26,28 @@ asynchronous distributed graph computation
 __C++__  
 disk based large scale graph computation  
 
+JUNG
+----
+__java__
+directed/undirected graphs  
+multi-model graphs  
+parallel edges  
+hypergraphs  
+clustering  
+decompostion  
+optimization  
+random graph generation  
+statistical analysis  
+network distance  
+flows  
+importance measure  
+visualization framework  
+
 What i need ?
 -------------
 A Graph Library in Scala  
 Ability to run graph algos on Spark Cluster  
 Using High Performance Collections like HPPC or Trove  
+JUNG could be a good option only problem it uses Common Collections so may not be highly optimized  
 
 This graph library to be used for Graphical Models as in GraphLab  
