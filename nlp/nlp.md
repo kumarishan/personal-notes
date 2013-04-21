@@ -6,7 +6,7 @@ Semantic Similarity
 -------------------
 __Topological similarity__ - graph based  
 
-_between ontological concepts_s  
+_between ontological concepts_  
 Edge based  
 Node based  
 

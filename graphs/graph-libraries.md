@@ -43,6 +43,12 @@ flows
 importance measure  
 visualization framework  
 
+fastgraph
+---------
+__java__  
+uses Javolution  
+implemented mainly for benchmark purpose  
+
 What i need ?
 -------------
 A Graph Library in Scala  
