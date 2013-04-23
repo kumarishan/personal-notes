@@ -1,0 +1,10 @@
+Design patterns
+===============
+
+Loan pattern aka Lender lendee pattern (in java)
+------------------------------------------------
+a control-abstraction function opens a resource and "loans" it to
+another function and then closes it  
+
+Command-Executor pattern
+------------------------
