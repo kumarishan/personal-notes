@@ -45,3 +45,26 @@ learning algos - LDA, Searn, Neural Net, matrix factorization
 loss functions - squared error, quantile, hinge, logistic  
 optimization algorithms - SGD, BFGS, Conjugate gradeint  
 regularization - L1 norm, L2 norm, elastic net regularization  
+
+MLBase
+------
+http://www.mlbase.org/
+
+ScaleR
+------
+
+H20
+---
+
+Cetas
+-----
+
+SkyTree
+-------
+
+Ayasdi
+------
+Topological data analysis  
+
+Mahout
+------

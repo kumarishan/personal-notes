@@ -57,3 +57,7 @@ Using High Performance Collections like HPPC or Trove
 JUNG could be a good option only problem it uses Common Collections so may not be highly optimized  
 
 This graph library to be used for Graphical Models as in GraphLab  
+
+Reference
+---------
+http://strata.oreilly.com/2012/12/graphchi-graph-analytics-over-billions-of-edges-using-your-laptop.html  

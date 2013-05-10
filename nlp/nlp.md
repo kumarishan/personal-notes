@@ -22,3 +22,7 @@ Pointwise Mutual Information
 
 Word-Sense Disambiguation
 -------------------------
+
+Reference
+---------
+http://acl.ldc.upenn.edu/P/P01/P01-1005.pdf  
