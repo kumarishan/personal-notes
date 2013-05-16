@@ -9,7 +9,7 @@ MVC
 
 Marionette JS
 -------------
-__javascript__
+__javascript__  
 Backbone based  
 MVC  
 
@@ -33,7 +33,7 @@ MVC
 
 BatmanJS
 ---------
-__coffeescript__
+__coffeescript__  
 
 SpineJS
 -------
@@ -42,4 +42,4 @@ MVC
 
 Reference
 ---------
-http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/
+http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/  

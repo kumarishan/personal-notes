@@ -78,3 +78,31 @@ DISCO - Distributionally related words using Co occurences
 ----------------------------------------------------------
 __java__  
 Semantic similarity using statistical measures  
+
+LingPipe
+--------
+
+Opinion Finder
+--------------
+
+Tawlk/osae
+----------
+
+GATE
+----
+
+textir
+------
+
+NLP Toolsuite
+-------------
+
+Stanford POS
+------------
+
+Freeling
+--------
+
+TreeTagger
+----------
+

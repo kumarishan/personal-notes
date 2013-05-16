@@ -34,3 +34,10 @@ Search Algos
 BFS  
 DFS  
 _more to come_
+
+
+Label Propagation
+-----------------
+
+Generating Function
+-------------------

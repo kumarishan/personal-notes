@@ -10,3 +10,8 @@ Soundex Algorithm
 Dice's coefficient same as StrikeAMatch  
 Hamming distance  
 Jaro-Winkler distance  
+
+
+Reference
+---------
+http://www.keithschwarz.com/interesting/  
