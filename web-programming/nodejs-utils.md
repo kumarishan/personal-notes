@@ -5,8 +5,26 @@ Passportjs
 ----------
 authentication middleware for node
 
-Express Framework
+Union
 -----------------
+Hybrid buffered or streaming middleware kernel backwards compatible
+with connect  
+
+ConsolidateJs
+-------------
+template engins consolidation library  
+
+Nohm
+----
+Redis ORM  
+
+generic-pool
+------------
+connection pooling  
+
+winston
+-------
+logger  
 
 
 Reference

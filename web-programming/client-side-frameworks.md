@@ -40,6 +40,11 @@ SpineJS
 __javascript__  
 MVC  
 
+boilerplatejs
+-------------
+http://boilerplatejs.org/  
+reference architecture for large scale apps  
+
 Reference
 ---------
 http://coding.smashingmagazine.com/2012/07/27/journey-through-the-javascript-mvc-jungle/  

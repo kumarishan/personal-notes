@@ -40,6 +40,13 @@ coreference resolution
 document categorization  
 machine learning - maximum entropy modelling  
 
+clojure-opennlp
+---------------
+
+SharpNLP
+--------
+c# port of OpenNLP  
+
 Pattern
 -------
 __python__  
@@ -106,3 +113,45 @@ Freeling
 TreeTagger
 ----------
 
+MEAD
+----
+Text summarization open source  
+
+Kea
+---
+Key phrase extraction  
+
+Maxent
+------
+Maximum entropy models  
+
+The Dragon Toolkit
+------------------
+document representation like - words, multiword phrases
+ontology-based concepts and concept pairs  
+text retrieval models  
+text classification clustering summarization and topic modell;ing  
+http://dragon.ischool.drexel.edu/features.asp  
+
+ScalaNLP
+--------
+
+Boilerpipe
+----------
+
+pignlproc
+---------
+apache pig utilities to build training corpora for machine learning/NLP out of public Wikipedia and DBPedia dumps  
+
+Apache Stanbol
+--------------
+set of reusable components for semantic content management  
+
+MaltParser
+----------
+system for data driven dependency parsing  
+
+Many Others
+-----------
+http://opennlp.sourceforge.net/projects.html  
+http://boston.lti.cs.cmu.edu/clueweb09/wiki/tiki-index.php?page=ClueWeb09%20Wiki  

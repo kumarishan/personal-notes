@@ -68,3 +68,6 @@ Topological data analysis
 
 Mahout
 ------
+
+Jubatus
+-------

@@ -41,6 +41,14 @@ Apache HBase
 Accumulo
 --------
 
+Gora
+----
+in memory data model and persistence for big data  
+
+Trevni
+------
+columnar file format for hdfs  
+designed afer google's Dremel  
 
 References
 ----------
