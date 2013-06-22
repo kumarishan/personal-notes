@@ -195,3 +195,293 @@ for(x <- m) yield f(x) eqv for(x <- m; y <- unit(f(x))) yield y
 flatten(m map identity) eqv m flatMap identity
 flatten(m) eqv m flatMap identity
 ```
+
+Array
+-----
+its a function  
+
+```scala
+class Array[T](l: int) extends (Int => T) {
+    def apply(i: Int) = ...
+}
+```
+
+Control Structures
+------------------
+implementing new control structures
+
+```scala
+//mandates that T has close function
+def using[T <: {def close()}](resource: T)(block: T => unit)(
+    try {
+        block(resource)
+    } finally {
+        if(resource != null) resource.close()
+    }
+)
+
+using(new BufferedReader(new FileReader(path))){
+    f => f.readLine()
+}
+```
+
+Functions/Methods
+-----------------
+by default parameters are val  
+procedure - a method executed only for its side effect - defined without = and return type  
+
+```scala
+val f = (_: Int) + (_: Int) // have to mention type for each placeholder
+a.foreach(println _) // a.foreach(println(_)) partially applied function
+
+def sum(a: Int, b: Int) = ...
+val a = sum _
+val b = sum(1, _: Int)
+b(3) // b.apply(1, 3) = b(1, 3)
+
+def m(x: Int){} // implicit return type Unit
+```
+[implicit parameters](http://docs.scala-lang.org/tutorials/tour/implicit-parameters.html)
+
+```scala
+abstract class SemiGroup[A] {
+    def add(x: A, y: A): A
+}
+
+abstract class Monoid[A] extends SemiGroup[A]{
+    def unit: A
+}
+
+object Test extends App {
+    implicit object IntMonoid extends Monoid[Int]{
+        def add(x: Int, y: Int): Int = x + y
+        def unit: Int = 0
+    }
+
+    implicit object StringMonoid extends Monoid[String]{
+        def add(x: String, y: String): String = x concat y
+        def unit: String = ""
+    }
+
+    def sum[A](x: List[A])(implicit m: Monoid[A]): A = ...
+
+}
+```
+[automatic type-dependent closure](http://docs.scala-lang.org/tutorials/tour/automatic-closures.html)  
+parameterless function names are parameters for method  
+
+```scala
+def whileLoop(cond: => Boolean)(body: => Unit){
+    if(cond){
+        body
+        whileLoop(cond)(body)
+    }
+}
+
+var i = 10
+whileLoop(i > 0){
+    
+}
+
+//another example
+def loop(body: => Unit): LoopUnlessCond = new LoopUnlessCond(body)
+
+class LoopUnlessCond(body: => Unit){
+    def unless(cond: => Boolean){
+        body
+        if(!cond) unless(cond)
+    }
+}
+
+loop {
+    ..
+} unless( i > 0)
+```
+
+
+Class
+-----
+[inner class](http://docs.scala-lang.org/tutorials/tour/inner-classes.html)
+__Implicit Class__
+[implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html)
+* implicit class makes it primary constructor available for implicit conversion
+* they can only be defined inside trait/class/object
+* they can have only one non-implicit member
+
+```scala
+implicit C(x: Int)(implicit i: Int) ...
+```
+* there may not be any method, member of object or object in the scope with the same name as that of implicit class
+* an object with same name as class is companion object and has to be in same source file
+* a class and its companion object can access the private members
+* use require for precondition check in constructor
+* another objects class parameters cannot be accessed - it will need to be converted to field
+* auxillary constructor - def this() = this(0) .. - must invoke another constructor of same class as first action
+* 
+Case Class
+----------
+it makes sense to use case class if pattern matching is used to decompose structure  
+
+Extractor Objects
+-----------------
+```scala
+object T {
+    def apply(x: Int): Int = ...
+    def unapply(x: Int): Option[Int] = ...
+}
+val x = T(23)
+x match { case T(n) => ... }
+```
+return type of unapply  
+- if its a test return Boolean, like case even()
+- if its a value return Option[T]
+- if its a list Option[(T1, T2,...)]
+
+Types
+-----
+compound types written using with eg: A with B with C { refinement }  
+subtyping of generic type is invariat - which means Stach[T] is only subtype of Stack[S] if S = T  
+use variance to control subtyping behavior  
++T means type T can only be used in covariant positions  
+-T means type T can only be used in contravariant position  
+
+View Bounds
+-----------
+enable to use type A as if its type B  
+
+```scala
+def f[A <% B](a: A) = a.bMethod
+def f[A](a: A)(implicit ev: A => B) = a.bMenthod //de-sugared
+````
+wat it means is the that there should be some implicit conversion from A to B such that one can call B methods  
+on object type of A.
+eg:
+
+```scala
+def f[A <: Ordered[A]](a: A, b: A) = if (a < b) a else b
+// because A can be converted to Ordered[A] and then Ordered has method <(other: A): Boolean hence we can use a < b
+```
+
+used for _pimp my library_ pattern which allows adding new methods to existing type, in situation u want to return the original type  
+
+Context Bounds
+--------------
+Type class pattern:  
+requires a parametrized types  
+it describes an implicit value  
+it is used to declare that for some type A there is an implicit value of type B[A] available  
+
+```scala
+def f[A : B](a: A) = g(a) // where g requires a implicit value of type B[A]
+def f[A](a: A)(implicit ev: B[A]) = g(a) //de-sugared
+
+def f[A : Ordering](a: A, b: A) = implicitly(Ordering[A]).compare(a: A, b: A)
+
+```
+
+
+
+Exception
+---------
+in order for java to be able to catch exception
+
+```scala
+@throws(classOf[IOException])
+def read() = ...
+```
+
+Annotations
+-----------
+if using java annotations make sure to use -target:jvm-1.5 option  
+
+```java
+@interface AnnotEx {
+    public String value();
+    public String mail() defailt "";
+}
+```
+
+```scala
+@AnnotEx("a value", mail = "email")
+class MyClass ...
+```
+
+File
+----
+* scala.io.Source
+* Source.fromFile(filename).getLines().toList
+
+Arrays
+------
+* always immutable
+
+List
+----
+* List() or Nil
+* :::, ::, (n)
+* drop(), dropRight()
+* reverse, count, mkString
+* exists, filter, forall, foreach, map, remove, sort
+* head, init, last, tail
+* isEmpty, length
+* reduceLeft
+* always immutable
+
+Tuples
+* _1, _2
+* contain different types
+
+Sets
+----
+* both mutable and immutable
+* default is immutable set
+* to create mutable using Set() import mutable.Set
+* +=, +
+
+Map
+---
+* both immutable and mutable
+* +=, ->
+
+Quirks
+------
+* ```=>``` is a class hence can be subclassed eg: Arrray  
+* breaks in scala can be used like
+
+```scala
+import scala.util.control.Breakable._
+breakable {
+    for(x <- 1 until 5){
+        if (x > 3) break
+    }
+}
+
+// implementation
+def breakable(op: => Unit){
+    try {
+        op
+    } catch{
+        case ex: BreakException => 
+    }
+}
+
+def break = throw breakException
+```
+* anonymous function without parameters - see Breakable implementation and usage and automated type-dependent closure
+* remember semicolon required here
+
+```scala
+def a(x: Int) = x.negate;
+```
+
+* in scala it is possible to tie a class to another type (which will be implemented in future) by giving self reference
+this the other type explicitly
+
+```scala
+class NodeImpl extends NodeI {
+    self: Node =>
+    ...
+}
+```
+
+* (1.0 / 0) isInfinity, 4 to 6 = Range(4, 5, 6), "bob" capitalize, "robert" drop 2 = "bert", 0 max 5

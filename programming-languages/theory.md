@@ -82,3 +82,7 @@ two functor laws - identity and composition
 higher order fucntions
 ----------------------
 a function that takes a function as parameter and/or returns as function as result  
+
+Lambda Calculus
+---------------
+http://www.ezresult.com/article/Lambda_calculus  
