@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Algorithms](#algorithms)
+	- [String Similarity](#string-similarity)
+	- [Reference](#reference)
+
 Algorithms
 ==========
 

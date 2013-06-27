@@ -1,3 +1,18 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Machine Learning](#machine-learning)
+	- [Scikit (sklearn)](#scikit-sklearn)
+	- [EBLearn](#eblearn)
+	- [Vowpal Wabbit](#vowpal-wabbit)
+	- [MLBase](#mlbase)
+	- [ScaleR](#scaler)
+	- [H20](#h20)
+	- [Cetas](#cetas)
+	- [SkyTree](#skytree)
+	- [Ayasdi](#ayasdi)
+	- [Mahout](#mahout)
+	- [Jubatus](#jubatus)
+
 Machine Learning
 ================
 

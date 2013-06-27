@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Numerical Calculations](#numerical-calculations)
+	- [PyAMG](#pyamg)
+	- [Theano](#theano)
+
 Numerical Calculations
 ======================
 

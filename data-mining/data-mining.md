@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Data Mining](#data-mining)
+	- [Association Rule Mining](#association-rule-mining)
+	- [Collaborative Filtering](#collaborative-filtering)
+
 Data Mining
 ===========
 

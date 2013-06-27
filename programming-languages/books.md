@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Programming Language Books](#programming-language-books)
+	- [Scala](#scala)
+	- [Java](#java)
+
 Programming Language Books
 ==========================
 

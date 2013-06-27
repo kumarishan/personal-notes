@@ -1,3 +1,8 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Probabilistic Graphical Model](#probabilistic-graphical-model)
+	- [Factorie](#factorie)
+
 Probabilistic Graphical Model
 =============================
 

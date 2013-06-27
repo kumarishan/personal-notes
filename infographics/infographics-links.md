@@ -1,3 +1,7 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Infographics Links for my own inspiration](#infographics-links-for-my-own-inspiration)
+
 Infographics Links for my own inspiration
 =========================================
 __Good designers copy, great designers steal__

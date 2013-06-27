@@ -1,11 +1,36 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Scala Language](#scala-language)
+	- [Option](#option)
+	- [Monad in Scala](#monad-in-scala)
+	- [for](#for)
+	- [Functor](#functor)
+	- [Applicative](#applicative)
+	- [Array](#array)
+	- [Control Structures](#control-structures)
+	- [Functions/Methods](#functionsmethods)
+	- [Class](#class)
+	- [Case Class](#case-class)
+	- [Extractor Objects](#extractor-objects)
+	- [Types](#types)
+	- [View Bounds](#view-bounds)
+	- [Context Bounds](#context-bounds)
+	- [Type-lambda](#type-lambda)
+	- [Exception](#exception)
+	- [Annotations](#annotations)
+	- [File](#file)
+	- [Arrays](#arrays)
+	- [List](#list)
+	- [Sets](#sets)
+	- [Map](#map)
+	- [Quirks](#quirks)
+
 Scala Language
 ==============
 http://docs.scala-lang.org/tutorials/FAQ/finding-symbols.html  
 http://docs.scala-lang.org/cheatsheets/  
 http://apocalisp.wordpress.com/  
 http://danielwestheide.com/scala/neophytes.html  
-
-[[_TOC_]]
 
 Option
 ------

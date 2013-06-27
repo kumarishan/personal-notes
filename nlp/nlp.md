@@ -1,3 +1,26 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Natural Language Processing related stuffs](#natural-language-processing-related-stuffs)
+	- [Semantic Similarity](#semantic-similarity)
+	- [Word-Sense Disambiguation](#word-sense-disambiguation)
+	- [Chunking](#chunking)
+	- [Sentiment Analysis](#sentiment-analysis)
+	- [Part of Speech tagging - POS](#part-of-speech-tagging---pos)
+	- [Topic or Context Analysis](#topic-or-context-analysis)
+	- [Keyword extraction](#keyword-extraction)
+	- [NER - Named Entity Recognition](#ner---named-entity-recognition)
+	- [Morphological analysis](#morphological-analysis)
+	- [Segmentation](#segmentation)
+	- [concordance: key words in context](#concordance-key-words-in-context)
+	- [Bigrams](#bigrams)
+	- [Bayesian Analysis](#bayesian-analysis)
+	- [Automatic Text Summarization](#automatic-text-summarization)
+	- [Rapid Automatic Keyword Extraction (RAKE) algorithm](#rapid-automatic-keyword-extraction-rake-algorithm)
+	- [Signification phrases](#signification-phrases)
+	- [Topic Modelling](#topic-modelling)
+	- [Divergence Calculation](#divergence-calculation)
+	- [CoReference Resolution](#coreference-resolution)
+	- [Reference](#reference)
 
 Natural Language Processing related stuffs
 ==========================================

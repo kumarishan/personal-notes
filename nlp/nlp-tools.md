@@ -1,3 +1,37 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Natural Language Processing](#natural-language-processing)
+	- [nltk](#nltk)
+	- [Mallet](#mallet)
+	- [Gensim](#gensim)
+	- [OpenNLP](#opennlp)
+	- [clojure-opennlp](#clojure-opennlp)
+	- [SharpNLP](#sharpnlp)
+	- [Pattern](#pattern)
+	- [MBSP](#mbsp)
+	- [ultraslicklsa](#ultraslicklsa)
+	- [Semantic Measure Libraries and Toolkit](#semantic-measure-libraries-and-toolkit)
+	- [DISCO - Distributionally related words using Co occurences](#disco---distributionally-related-words-using-co-occurences)
+	- [LingPipe](#lingpipe)
+	- [Opinion Finder](#opinion-finder)
+	- [Tawlk/osae](#tawlkosae)
+	- [GATE](#gate)
+	- [textir](#textir)
+	- [NLP Toolsuite](#nlp-toolsuite)
+	- [Stanford POS](#stanford-pos)
+	- [Freeling](#freeling)
+	- [TreeTagger](#treetagger)
+	- [MEAD](#mead)
+	- [Kea](#kea)
+	- [Maxent](#maxent)
+	- [The Dragon Toolkit](#the-dragon-toolkit)
+	- [ScalaNLP](#scalanlp)
+	- [Boilerpipe](#boilerpipe)
+	- [pignlproc](#pignlproc)
+	- [Apache Stanbol](#apache-stanbol)
+	- [MaltParser](#maltparser)
+	- [Many Others](#many-others)
+
 Natural Language Processing
 ===========================
 

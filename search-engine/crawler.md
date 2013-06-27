@@ -1,3 +1,10 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Web crawlers](#web-crawlers)
+	- [Heritrix](#heritrix)
+	- [Nutch](#nutch)
+	- [References](#references)
+
 Web crawlers
 ============
 

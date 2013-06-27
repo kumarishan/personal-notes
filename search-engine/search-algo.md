@@ -1,3 +1,10 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Search](#search)
+	- [NDCG](#ndcg)
+	- [Query rewriting](#query-rewriting)
+	- [Reference](#reference)
+
 Search
 ======
 

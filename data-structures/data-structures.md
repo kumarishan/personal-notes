@@ -1,3 +1,7 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Data Structures](#data-structures)
+
 Data Structures
 ===============
 

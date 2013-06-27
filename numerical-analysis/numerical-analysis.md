@@ -1,3 +1,8 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Numerical Calculation Methods](#numerical-calculation-methods)
+- [Fixed point method](#fixed-point-method)
+
 Numerical Calculation Methods
 =============================
 

@@ -1,3 +1,8 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Graphical Models Library](#graphical-models-library)
+	- [GRMM - GRaphical Models in Mallet](#grmm---graphical-models-in-mallet)
+
 Graphical Models Library
 ========================
 

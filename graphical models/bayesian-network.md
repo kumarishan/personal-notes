@@ -1,3 +1,10 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Bayesian Network](#bayesian-network)
+	- [probability theory](#probability-theory)
+	- [Causal network](#causal-network)
+	- [Bayesian Network](#bayesian-network-1)
+
 Bayesian Network
 ================
 

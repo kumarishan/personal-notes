@@ -1,3 +1,17 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Client Side Web Frameworks](#client-side-web-frameworks)
+	- [Chaplin JS](#chaplin-js)
+	- [Marionette JS](#marionette-js)
+	- [AngularJS](#angularjs)
+	- [EmberJS](#emberjs)
+	- [KnockoutJS](#knockoutjs)
+	- [AgilityJS](#agilityjs)
+	- [BatmanJS](#batmanjs)
+	- [SpineJS](#spinejs)
+	- [boilerplatejs](#boilerplatejs)
+	- [Reference](#reference)
+
 Client Side Web Frameworks
 ==========================
 

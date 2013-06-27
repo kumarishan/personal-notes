@@ -1,3 +1,15 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [List of high performance collection libraries](#list-of-high-performance-collection-libraries)
+	- [HPPC - High Performance Primitive Collection](#hppc---high-performance-primitive-collection)
+	- [Trove](#trove)
+	- [Colt](#colt)
+	- [Mahout - Math](#mahout---math)
+	- [PCJ - Primitive collection for java](#pcj---primitive-collection-for-java)
+	- [Javolution](#javolution)
+	- [fastutil](#fastutil)
+	- [note](#note)
+
 List of high performance collection libraries
 ==============================================
 

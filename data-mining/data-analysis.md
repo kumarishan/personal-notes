@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Statistics and Data Analysis](#statistics-and-data-analysis)
+	- [Pandas](#pandas)
+	- [Statsmodels](#statsmodels)
+
 Statistics and Data Analysis
 ============================
 

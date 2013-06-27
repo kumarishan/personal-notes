@@ -1,3 +1,7 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Personal Notes](#personal-notes)
+
 Personal Notes
 ==============
 

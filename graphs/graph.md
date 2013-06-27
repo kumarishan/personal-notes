@@ -1,3 +1,12 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Graph](#graph)
+	- [Deterministic Graph Generation](#deterministic-graph-generation)
+	- [Random Graph Generation](#random-graph-generation)
+	- [Search Algos](#search-algos)
+	- [Label Propagation](#label-propagation)
+	- [Generating Function](#generating-function)
+
 Graph
 =====
 

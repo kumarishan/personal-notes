@@ -1,3 +1,14 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Scala Miscellaneous libraries](#scala-miscellaneous-libraries)
+	- [bijection](#bijection)
+	- [spire](#spire)
+	- [Scalaz](#scalaz)
+	- [Shapeless](#shapeless)
+	- [algebird](#algebird)
+	- [spray](#spray)
+	- [twirl](#twirl)
+
 Scala Miscellaneous libraries
 =============================
 

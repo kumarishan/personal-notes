@@ -1,3 +1,25 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Programming languages theoritical concepts](#programming-languages-theoritical-concepts)
+	- [polymorphism](#polymorphism)
+	- [Imperative Programming](#imperative-programming)
+	- [Object Oriented Programming](#object-oriented-programming)
+	- [Functional Programming](#functional-programming)
+	- [expression](#expression)
+	- [expression problem](#expression-problem)
+	- [side effects](#side-effects)
+	- [pure functions](#pure-functions)
+	- [referential transparency](#referential-transparency)
+	- [Type Class](#type-class)
+	- [Monoid](#monoid)
+	- [Monad](#monad)
+	- [Functor](#functor)
+	- [higher order fucntions](#higher-order-fucntions)
+	- [Lambda Calculus](#lambda-calculus)
+	- [Sequence Point](#sequence-point)
+	- [Kinds](#kinds)
+	- [References](#references)
+
 Programming languages theoritical concepts
 ==========================================
 

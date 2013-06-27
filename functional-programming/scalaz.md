@@ -1,3 +1,9 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Scalaz](#scalaz)
+	- [SemiGroup](#semigroup)
+	- [Monoids](#monoids)
+
 Scalaz
 ======
 http://eed3si9n.com/learning-scalaz/  
