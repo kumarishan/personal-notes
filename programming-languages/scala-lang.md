@@ -5,6 +5,8 @@ http://docs.scala-lang.org/cheatsheets/
 http://apocalisp.wordpress.com/  
 http://danielwestheide.com/scala/neophytes.html  
 
+[[_TOC_]]
+
 Option
 ------
 using option as returning result and passing parameters enables us to avoid ifs for null checks  
