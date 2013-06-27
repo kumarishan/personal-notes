@@ -16,3 +16,4 @@ http://dribbble.com/shots/1021563-Quarterly-Report-infographic
 http://dribbble.com/shots/1018398-Info-Poster-Resume-Design-Pie  
 http://dribbble.com/shots/1001900-Case-Study-Sneak-Peek  
 http://dribbble.com/shots/962347-Analytics-Dashboard  
+http://flatuicolors.com/  

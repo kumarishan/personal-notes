@@ -34,12 +34,14 @@ side effects
 ------------
 a function is said to have side effect if in addition to returing a result it
 also modifies some state or have observable interaction with calling functions  
-absence of side effects is necessart but not sufficient condition for referential transparency  
+absence of side effects is necessary but not sufficient condition for referential transparency  
+anything that violates referential transparency has side effects  
 
 pure functions
 --------------
 the function always evaluate to the same result value given the same argument values  
 evaluation of the result doesnot cause any observable side effects or output  
+if it is referentially transparent for all referentially trasnparent parameters  
 
 referential transparency
 ------------------------
@@ -48,6 +50,15 @@ without changing the behavior of a program
 helps in improving programs through memoization, comman subexpression elimination and parallelization  
 if all are pure function then the expression is referential transparent  
 
+Type Class
+----------
+is a type system that supports ad-hoc polymorphism and retroactive polymorphism  
+it's different from the classes in oop because there is no such value for this type  
+a type class C defines some behaviour in the form of operations that must be supported by a type T
+for it to be a member of type class C  
+whether the Type T is member or not is not inherent in the type.. simply providing implementations of the
+operations that type must support  
+always take one or more type parameters  
 
 Monoid
 ------
@@ -73,11 +84,14 @@ join/flattern - ????
 Monadic zeros  
 
 all monads are functors  
+apply a function that returns a wrapped value to a wrapped value  
 
 Functor
 -------
+is a type class  
 for now look into scala treatement  
 two functor laws - identity and composition  
+apply a function to a wrapped value to get wrapped value
 
 higher order fucntions
 ----------------------
@@ -86,3 +100,31 @@ a function that takes a function as parameter and/or returns as function as resu
 Lambda Calculus
 ---------------
 http://www.ezresult.com/article/Lambda_calculus  
+
+Sequence Point
+--------------
+is any poinr in program's execution where it is gauranteed that eer side effects of previous evaluation will have been performed and
+no side effects from subsequent evaluation have yet been performed  
+eg:  
+f() + g() - + is not associated with sequence point hence any of f or g can be evaluated first  
+f(), g() - , is a sequence point ensuring f to be evaluated before g  
+commonly associated with c and c++ in following places  
+* && ||
+* ? :
+* ;, control statement, loops
+* before functions is entered in a function call
+* at a function return, after the return value is copied into the calling context
+* end of initializer
+* between each declarator
+
+Kinds
+-----
+* [higher-kinded types](http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala)
+* higher kinded type is type constructor that accepts other type constructor like ```class Functor[N[_]]``` - (* -> *) -> *
+* 1st order kinded type is a type that accepts other types to create a proper type - * -> * -> *
+* proper type is a type that u can make a value of - *
+
+References
+----------
+http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html#just-what-is-a-functor-really  
+http://en.wikibooks.org/wiki/Haskell/Understanding_arrows  

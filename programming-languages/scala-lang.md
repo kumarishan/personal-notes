@@ -2,6 +2,8 @@ Scala Language
 ==============
 http://docs.scala-lang.org/tutorials/FAQ/finding-symbols.html  
 http://docs.scala-lang.org/cheatsheets/  
+http://apocalisp.wordpress.com/  
+http://danielwestheide.com/scala/neophytes.html  
 
 Option
 ------
@@ -162,6 +164,7 @@ m filter {x => false} eqv mzero
 Functor
 -------
 its a class with map  
+it aply a function to a wrapped data to get a wrapped data
 
 ```scala
 class M[A] {  
@@ -195,6 +198,10 @@ for(x <- m) yield f(x) eqv for(x <- m; y <- unit(f(x))) yield y
 flatten(m map identity) eqv m flatMap identity
 flatten(m) eqv m flatMap identity
 ```
+
+Applicative
+-----------
+apply a wrapped function over wrapped data to get a wrapped data
 
 Array
 -----
@@ -344,6 +351,7 @@ subtyping of generic type is invariat - which means Stach[T] is only subtype of 
 use variance to control subtyping behavior  
 +T means type T can only be used in covariant positions  
 -T means type T can only be used in contravariant position  
+__type ascription__ - : tells the compiler what type u expect out of an expression of all the valid types better than using asInstanceOf  
 
 View Bounds
 -----------
@@ -375,11 +383,23 @@ it is used to declare that for some type A there is an implicit value of type B[
 def f[A : B](a: A) = g(a) // where g requires a implicit value of type B[A]
 def f[A](a: A)(implicit ev: B[A]) = g(a) //de-sugared
 
+def sum[A: Monoid](xs: List[A]): A = {
+    val m = implicitly[Monoid[A]
+    xs.foldLeft(m.mzero)(m.mappend)
+}
+
 def f[A : Ordering](a: A, b: A) = implicitly(Ordering[A]).compare(a: A, b: A)
 
 ```
 
-
+Type-lambda
+-----------
+* higher
+* is like currying the type system
+* [higher-kinded types](http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala)
+* higher kinded type is type constructor that accepts other type constructor like ```class Functor[N[_]]```
+* 1st order kinded type is a type that accepts other types to create a proper type
+* proper type is a type that u can make a value of
 
 Exception
 ---------
@@ -485,3 +505,5 @@ class NodeImpl extends NodeI {
 ```
 
 * (1.0 / 0) isInfinity, 4 to 6 = Range(4, 5, 6), "bob" capitalize, "robert" drop 2 = "bert", 0 max 5
+* to get the implicit value of a type implicitly[Type]
+* to pass a sequence to a varargs function use type ascription to _*  ```Set(values: _*)```
