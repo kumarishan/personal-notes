@@ -2,10 +2,6 @@
 
 - [Scala Language](#scala-language)
 	- [Option](#option)
-	- [Monad in Scala](#monad-in-scala)
-	- [for](#for)
-	- [Functor](#functor)
-	- [Applicative](#applicative)
 	- [Array](#array)
 	- [Control Structures](#control-structures)
 	- [Functions/Methods](#functionsmethods)
@@ -13,6 +9,13 @@
 	- [Case Class](#case-class)
 	- [Extractor Objects](#extractor-objects)
 	- [Types](#types)
+		- [Compound types](#compound-types)
+		- [Type ascription](#type-ascription)
+		- [Variance](#variance)
+			- [Covariant subtyping](#covariant-subtyping)
+			- [Contravariant subtyping](#contravariant-subtyping)
+			- [Variance positions](#variance-positions)
+		- [Existential types](#existential-types)
 	- [View Bounds](#view-bounds)
 	- [Context Bounds](#context-bounds)
 	- [Type-lambda](#type-lambda)
@@ -21,217 +24,33 @@
 	- [File](#file)
 	- [Arrays](#arrays)
 	- [List](#list)
+	- [Tuples](#tuples)
 	- [Sets](#sets)
 	- [Map](#map)
+	- [Functional Programming](#functional-programming)
+		- [Monad in Scala](#monad-in-scala)
+		- [Functor](#functor)
+		- [Applicative](#applicative)
+	- [Array](#array-1)
+	- [Control Structures](#control-structures-1)
 	- [Quirks](#quirks)
 
-Scala Language
-==============
+# Scala Language
+
 http://docs.scala-lang.org/tutorials/FAQ/finding-symbols.html  
 http://docs.scala-lang.org/cheatsheets/  
 http://apocalisp.wordpress.com/  
 http://danielwestheide.com/scala/neophytes.html  
 
-Option
-------
+## Option
+
 using option as returning result and passing parameters enables us to avoid ifs for null checks  
 use getOrElse instead of if(...)  
 use for comprehension to perform a series of operation only if something was passed as parameters  
-Option is a monad and can be visualized as a List of two 
+Option is a monad and can be visualized as a List of two
 
-Monad in Scala
---------------
-all containers and Options is a monad  
-scala does not mandate declaration of flatten but mandate flatMap and map, to enable its usage with for comprehenssion  
+## Array
 
-flatMap == flatten(map()) - can be implemented via flatten and map  
-
-```scala
-def flatMap[B](f: A => M[B]): M[B] = ..  
-```
-
-flatten: M[M[A]] -> M[A]  
-eg:  
-
-```scala
-def flatten[A](outer: Option[Option[A]]) : Option[A] =
-  outer match {
-    case None => None
-    case Some(inner) => inner
-  }
-```
-
-map: can also be implemented via flatMap and constructor/unit  
-
-```scala
-def map[B](f: A => B):M[B] = flatMap {x => unit(f(x))}
-def unit[A](x:A): M[A] = ..
-```
-
-a monad can be class, case class or trait  
-bind is eqv to flatMap  
-join is eqv to flatten  
-and result/unit is eqv to new M(v) or just M(v)  
-
-chaining using monad (to avoid null checks) as done using do/domonad in pure functional lang is done in scala using for comprehension  
-for {
-    a <- ....
-    b <- ....
-} yield ...
-
-__Laws__  
-Identity: First Monad law
-
-```scala
-m flatMap unit eqv m
-m flatMap { x => unit(x)} eqv m
-m flatMap { x => unit(identity(x))} eqv m
-m map { x => identiy(x)} eqv m
-
-for (x <- m; y <- unit(x)) yield y eqv m
-```
-Unit: Second monad law
-
-```scala
-unit(x) flatMap f eqv f(x)
-unit(x) flatMap {y => f(y)} eqv f(x)
-
-for (y <- unit(x); result <- f(y)) yield result eqv f(x)
-
-unit(x) map f eqv unit(f(x))
-unit(x) map f eqv unit(x) flatMap { y => unit(f(y))}
-
-for ( y <- unit(x) ) yield f(y) eqv unit(f(x))
-```
-
-Composition: Third monad law
-
-```scala
-m flatMap g flatMap f eqv m flatMap {x => g(x) flatMap f}
-m flatMap {x => g(x)} flatMap {y => g(y)} eqv m flatMap {x => g(x) flatMap { y => f(y)}}
-
-for (a <- m; b <- g(a); result <- f(b)) yield result eqv
-for (a <- m; result <- for (b <- g(a); t <- f(b)) yield t) yield result
-```
-
-for
----
-for comprehension is a way to execute monads (eqv to do in clojure like purely functional prog lang)  
-
-if for is used with yield then its converted using recursive flatMap and map  
-eg:  
-
-```scala
-for (n <- a; m <- b) yield n op m
-```
-is eqv to  
-
-```scala
-a flatMap {n => b map { m => n op m }}
-```
-eqv to  
-
-```scala
-a flatMap {n => b flatMap { m => unit(n op m) }}
-```
-
-if its devoid of yield then its implemented using foreach, this is called imperative form of for  
-for (n <- a; m <= b) println n op m  
-a foreach {n => b foreach { m => println n op m}}  
-
-foreach is needed if you want to use the imperative form of for  
-
-__for with gaurds__ if  
-
-```scala
-for ( n <- a if nexpr) yield n  
-a filter { n => expr } map n => n  
-```
-
-__Monadic zeros__
-Identity: first law of zero
-
-```scala
-mzero flatMap f  eqv mzero
-mzero map f eqv mzero
-```
-M to Zero in Nothing Flat: Second law of zero
-
-```scala
-m flatMap { x => mzero } eqv mzero
-```
-
-Plus: Third and fourth zero law
-for monads with zero they have plus for eg.. List with ::: and Option with orElse  
-
-```scala
-class M[A] {
-    def plus(other: M[B >: A]): M[B] = ...
-}
-
-mzero plus m eqv m
-m plus mzero eqz m
-```
-
-flterrable monad implements filter  
-
-```scala
-class M[A] {
-    def map[B](f: A => B): M[B] = ...
-    def flatMap[B](f: A => M[B]):M[B] = ...
-    def filter(f: A => Boolean): M[A] = ...
-}
-
-m filter p eqv m flatMap {x => if(p(x)) unit(x) else mzero }
-m filter { x => true} eqv m
-m filter {x => false} eqv mzero
-```
-
-
-Functor
--------
-its a class with map  
-it aply a function to a wrapped data to get a wrapped data
-
-```scala
-class M[A] {  
-  def map[B](f: A => B): M[B] = ..  
-}  
-```
-
-identity law  
-for functor m  
-
-```scala
-m map identityFunc eqv m  
-m map { x => identity(x)} eqv m  
-m map { x => x} eqv m  
-```
-composition law  
-
-```scala
-m map g map f eqv m map { x => f(g(x))}  
-eg:  
-m map g map f == m map (f compose g)  
-for ( x <- (for (y <- m) yield g(y))) yield f(x) eqv for (x <- m) yield f(g(x))  
-```
-
-functor/monad connection law  
-
-```scala
-m map f eqv m flatMap {x => unit(f(x))}
-for(x <- m) yield f(x) eqv for(x <- m; y <- unit(f(x))) yield y
-
-flatten(m map identity) eqv m flatMap identity
-flatten(m) eqv m flatMap identity
-```
-
-Applicative
------------
-apply a wrapped function over wrapped data to get a wrapped data
-
-Array
------
 its a function  
 
 ```scala
@@ -240,8 +59,8 @@ class Array[T](l: int) extends (Int => T) {
 }
 ```
 
-Control Structures
-------------------
+## Control Structures
+
 implementing new control structures
 
 ```scala
@@ -259,8 +78,8 @@ using(new BufferedReader(new FileReader(path))){
 }
 ```
 
-Functions/Methods
------------------
+## Functions/Methods
+
 by default parameters are val  
 procedure - a method executed only for its side effect - defined without = and return type  
 
@@ -333,8 +152,8 @@ loop {
 ```
 
 
-Class
------
+## Class
+
 [inner class](http://docs.scala-lang.org/tutorials/tour/inner-classes.html)
 __Implicit Class__
 [implicit classes](http://docs.scala-lang.org/overviews/core/implicit-classes.html)
@@ -351,13 +170,12 @@ implicit C(x: Int)(implicit i: Int) ...
 * use require for precondition check in constructor
 * another objects class parameters cannot be accessed - it will need to be converted to field
 * auxillary constructor - def this() = this(0) .. - must invoke another constructor of same class as first action
-* 
-Case Class
-----------
+
+## Case Class
 it makes sense to use case class if pattern matching is used to decompose structure  
 
-Extractor Objects
------------------
+## Extractor Objects
+
 ```scala
 object T {
     def apply(x: Int): Int = ...
@@ -371,17 +189,111 @@ return type of unapply
 - if its a value return Option[T]
 - if its a list Option[(T1, T2,...)]
 
-Types
------
-compound types written using with eg: A with B with C { refinement }  
-subtyping of generic type is invariat - which means Stach[T] is only subtype of Stack[S] if S = T  
-use variance to control subtyping behavior  
-+T means type T can only be used in covariant positions  
--T means type T can only be used in contravariant position  
-__type ascription__ - : tells the compiler what type u expect out of an expression of all the valid types better than using asInstanceOf  
+## Types
 
-View Bounds
------------
+### Compound types
+written using with eg: ```A with B with C { refinement }```
+
+### Type ascription
+tells the compiler what type u expect out of an expression of all the valid types better than using asInstanceOf
+
+### Variance
+
+#### Covariant subtyping
+a bit of background  
+if we define a class as  
+
+```scala
+class A[T]
+class B
+class C extends B
+```
+here C is subtype of B but is A[C] subtype of A[B] ?? well if u try this 
+
+```scala
+val a: A[B] = new A[C]
+Note: c <: B, but class A is invariant in type T.
+You may wish to define T as +T instead. (SLS 4.5)
+       val a:A[B] = new A[c]
+                    ^
+```
+it gives error because class A is invariant in type T  
+what we want is that class A to be covariant in type T ie.  
+if type S is subtype of T then A[S] is also subtype of A[T] - this is called covariant(flexible) subtyping  
+and defined as  
+
+```scala
+class A[+T]
+```
+orders types from more specific to mroe generic
+
+using lower bound to solve the problem of using covariant type in method parameters
+
+```scala
+class A[+T]{
+    def m[B >: A](b: B): A = ...
+}
+```
+it will now accept A or any super type of A
+
+#### Contravariant subtyping
+its opposite of covariant ie  
+
+```scala
+class A[-T]
+class B
+class C extends B
+```
+then A[B] is a subtype of A[C] ie
+
+```scala
+val a: A[C] = new A[B]
+val a: A[B] = new A[C] //error
+```
+orders types from more generic to more specific
+
+#### Variance positions
+* \- annotated type parameter can be used in only negative position inside the class similarly \+ annotated only in positive positions
+invariant type can be used in any position negative/positive/neutral
+* positions at the top level of class is classified as positive
+* method value parameter positions and type parameters of the method are classified as flipped
+* classification is flipped at type argument position of a type if it is annoted with \-. if it has no variance annotation then it is changed to neutral
+* function's arguments are contravariant positions, but return type is covariant evident from the fact that function's are defined as
+
+```scala
+class Function1[-T1, +R]
+class Function2[-T1, -T2, +R] // and so on
+```
+eg:
+
+```scala
+class A[-T, +U]{
+    def m[W-](a: T-, b: A[U+, T-]-): A[A[U+, T-]-, U+]+ = ...
+}
+```
+* variance is not applicable to mutable state
+
+```scala
+class A[+T]{
+    var a: T // generates a setter def t_=(t: T){ this.t = t}
+}
+```
+even though T is covariant its usage in t_'s parameter is legal
+
+### Existential types
+mostly used while accessing java class with wildcards eg: ```Iterator<?>```  
+
+```scala
+Iterator<?> in scala is Iterator[T] forSome {type T}
+Iterator<?> extends Component> in scala is Iterator[T] forSome {type T <: Component}
+
+Iterator[_] is shortform for Iterator[T] forSome {type T}
+```
+in scala if u use _ as a placeholder for types then it makes an existential type  
+
+
+## View Bounds
+
 enable to use type A as if its type B  
 
 ```scala
@@ -399,8 +311,8 @@ def f[A <: Ordered[A]](a: A, b: A) = if (a < b) a else b
 
 used for _pimp my library_ pattern which allows adding new methods to existing type, in situation u want to return the original type  
 
-Context Bounds
---------------
+## Context Bounds
+
 Type class pattern:  
 requires a parametrized types  
 it describes an implicit value  
@@ -419,8 +331,8 @@ def f[A : Ordering](a: A, b: A) = implicitly(Ordering[A]).compare(a: A, b: A)
 
 ```
 
-Type-lambda
------------
+## Type-lambda
+
 * higher
 * is like currying the type system
 * [higher-kinded types](http://stackoverflow.com/questions/6246719/what-is-a-higher-kinded-type-in-scala)
@@ -428,8 +340,8 @@ Type-lambda
 * 1st order kinded type is a type that accepts other types to create a proper type
 * proper type is a type that u can make a value of
 
-Exception
----------
+## Exception
+
 in order for java to be able to catch exception
 
 ```scala
@@ -437,8 +349,8 @@ in order for java to be able to catch exception
 def read() = ...
 ```
 
-Annotations
------------
+## Annotations
+
 if using java annotations make sure to use -target:jvm-1.5 option  
 
 ```java
@@ -453,17 +365,17 @@ if using java annotations make sure to use -target:jvm-1.5 option
 class MyClass ...
 ```
 
-File
-----
+## File
+
 * scala.io.Source
 * Source.fromFile(filename).getLines().toList
 
-Arrays
-------
+## Arrays
+
 * always immutable
 
-List
-----
+## List
+
 * List() or Nil
 * :::, ::, (n)
 * drop(), dropRight()
@@ -474,24 +386,244 @@ List
 * reduceLeft
 * always immutable
 
-Tuples
+## Tuples
+
 * _1, _2
 * contain different types
 
-Sets
-----
+## Sets
+
 * both mutable and immutable
 * default is immutable set
 * to create mutable using Set() import mutable.Set
 * +=, +
 
-Map
----
+## Map
+
 * both immutable and mutable
 * +=, ->
 
-Quirks
-------
+## Functional Programming
+
+### Monad in Scala
+
+all containers and Options is a monad  
+scala does not mandate declaration of flatten but mandate flatMap and map, to enable its usage with for comprehenssion  
+
+flatMap == flatten(map()) - can be implemented via flatten and map  
+
+```scala
+def flatMap[B](f: A => M[B]): M[B] = ..  
+```
+
+flatten: M[M[A]] -> M[A]  
+eg:  
+
+```scala
+def flatten[A](outer: Option[Option[A]]) : Option[A] =
+  outer match {
+    case None => None
+    case Some(inner) => inner
+  }
+```
+
+map: can also be implemented via flatMap and constructor/unit  
+
+```scala
+def map[B](f: A => B):M[B] = flatMap {x => unit(f(x))}
+def unit[A](x:A): M[A] = ..
+```
+
+a monad can be class, case class or trait  
+bind is eqv to flatMap  
+join is eqv to flatten  
+and result/unit is eqv to new M(v) or just M(v)  
+
+chaining using monad (to avoid null checks) as done using do/domonad in pure functional lang is done in scala using for comprehension  
+for {
+    a <- ....
+    b <- ....
+} yield ...
+
+__Laws__  
+Identity: First Monad law
+
+```scala
+m flatMap unit eqv m
+m flatMap { x => unit(x)} eqv m
+m flatMap { x => unit(identity(x))} eqv m
+m map { x => identiy(x)} eqv m
+
+for (x <- m; y <- unit(x)) yield y eqv m
+```
+Unit: Second monad law
+
+```scala
+unit(x) flatMap f eqv f(x)
+unit(x) flatMap {y => f(y)} eqv f(x)
+
+for (y <- unit(x); result <- f(y)) yield result eqv f(x)
+
+unit(x) map f eqv unit(f(x))
+unit(x) map f eqv unit(x) flatMap { y => unit(f(y))}
+
+for ( y <- unit(x) ) yield f(y) eqv unit(f(x))
+```
+
+Composition: Third monad law
+
+```scala
+m flatMap g flatMap f eqv m flatMap {x => g(x) flatMap f}
+m flatMap {x => g(x)} flatMap {y => g(y)} eqv m flatMap {x => g(x) flatMap { y => f(y)}}
+
+for (a <- m; b <- g(a); result <- f(b)) yield result eqv
+for (a <- m; result <- for (b <- g(a); t <- f(b)) yield t) yield result
+```
+for comprehension is a way to execute monads (eqv to do in clojure like purely functional prog lang)  
+
+if for is used with yield then its converted using recursive flatMap and map  
+eg:  
+
+```scala
+for (n <- a; m <- b) yield n op m
+```
+is eqv to  
+
+```scala
+a flatMap {n => b map { m => n op m }}
+```
+eqv to  
+
+```scala
+a flatMap {n => b flatMap { m => unit(n op m) }}
+```
+
+if its devoid of yield then its implemented using foreach, this is called imperative form of for  
+for (n <- a; m <= b) println n op m  
+a foreach {n => b foreach { m => println n op m}}  
+
+foreach is needed if you want to use the imperative form of for  
+
+__for with gaurds__ if  
+
+```scala
+for ( n <- a if nexpr) yield n  
+a filter { n => expr } map n => n  
+```
+
+__Monadic zeros__
+Identity: first law of zero
+
+```scala
+mzero flatMap f  eqv mzero
+mzero map f eqv mzero
+```
+M to Zero in Nothing Flat: Second law of zero
+
+```scala
+m flatMap { x => mzero } eqv mzero
+```
+
+Plus: Third and fourth zero law
+for monads with zero they have plus for eg.. List with ::: and Option with orElse  
+
+```scala
+class M[A] {
+    def plus(other: M[B >: A]): M[B] = ...
+}
+
+mzero plus m eqv m
+m plus mzero eqz m
+```
+
+flterrable monad implements filter  
+
+```scala
+class M[A] {
+    def map[B](f: A => B): M[B] = ...
+    def flatMap[B](f: A => M[B]):M[B] = ...
+    def filter(f: A => Boolean): M[A] = ...
+}
+
+m filter p eqv m flatMap {x => if(p(x)) unit(x) else mzero }
+m filter { x => true} eqv m
+m filter {x => false} eqv mzero
+```
+
+
+### Functor
+
+its a class with map  
+it aply a function to a wrapped data to get a wrapped data
+
+```scala
+class M[A] {  
+  def map[B](f: A => B): M[B] = ..  
+}  
+```
+
+identity law  
+for functor m  
+
+```scala
+m map identityFunc eqv m  
+m map { x => identity(x)} eqv m  
+m map { x => x} eqv m  
+```
+composition law  
+
+```scala
+m map g map f eqv m map { x => f(g(x))}  
+eg:  
+m map g map f == m map (f compose g)  
+for ( x <- (for (y <- m) yield g(y))) yield f(x) eqv for (x <- m) yield f(g(x))  
+```
+
+functor/monad connection law  
+
+```scala
+m map f eqv m flatMap {x => unit(f(x))}
+for(x <- m) yield f(x) eqv for(x <- m; y <- unit(f(x))) yield y
+
+flatten(m map identity) eqv m flatMap identity
+flatten(m) eqv m flatMap identity
+```
+
+### Applicative
+
+apply a wrapped function over wrapped data to get a wrapped data
+
+## Array
+
+its a function  
+
+```scala
+class Array[T](l: int) extends (Int => T) {
+    def apply(i: Int) = ...
+}
+```
+
+## Control Structures
+
+implementing new control structures
+
+```scala
+//mandates that T has close function
+def using[T <: {def close()}](resource: T)(block: T => unit)(
+    try {
+        block(resource)
+    } finally {
+        if(resource != null) resource.close()
+    }
+)
+
+using(new BufferedReader(new FileReader(path))){
+    f => f.readLine()
+}
+```
+
+## Quirks
+
 * ```=>``` is a class hence can be subclassed eg: Arrray  
 * breaks in scala can be used like
 

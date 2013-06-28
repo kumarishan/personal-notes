@@ -1,4 +1,4 @@
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents**
 
 - [Programming languages theoritical concepts](#programming-languages-theoritical-concepts)
 	- [polymorphism](#polymorphism)
@@ -81,6 +81,11 @@ for it to be a member of type class C
 whether the Type T is member or not is not inherent in the type.. simply providing implementations of the
 operations that type must support  
 always take one or more type parameters  
+
+Type
+----
+universal types
+existential types - in java ```List<?>``` and in scala ```List[_]```
 
 Monoid
 ------
