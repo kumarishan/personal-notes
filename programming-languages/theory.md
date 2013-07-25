@@ -92,16 +92,21 @@ Monoid
 
 Monad
 -----
-a srtcuture that represents computation  
+a structure that represents computation  
 http://www.intensivesystems.net/tutorials/monads_101.html  
 james-iry.blogspot.com/2007/09/monads-are-elephants-part-1.html  
 http://scabl.blogspot.in/2013/02/monads-in-scala-1.html  
-in basic a monad contains to functions bind/flatMap/>>= and result/return/unit/single argument constructor or factory  
+
+basically a monad contains to functions bind/flatMap/>>= and result/return/unit/single argument constructor or factory  
+it is supposed to amplify types  
+for eg:  
+Int could be amplified using Maybe monad to accumulate null or execptions  
+and when a function takes a value and return and amplified value .. then inorder to compose such functions
+we require Monads   
 
 bind/... -> for a monad it takes applies a higher order function to each of the values in a monad (monadic value)  
 unit/return/result/... -> takes a term of type A and turns it into a monad fo type M[A], this is
 effectively saying it takes a value and return a monadic value  
-
 
 the functions that are chained are called monadic function  
 and the values that are returned are called monadic values  
@@ -112,6 +117,26 @@ Monadic zeros
 
 all monads are functors  
 apply a function that returns a wrapped value to a wrapped value  
+
+monads help in composing funtions that return amplified values (ie monadic values)
+
+examples of monads
+- continuation passing syle
+- io monad
+- maybe
+- identity monad
+- exception monads - maybe or either
+- nullable - possibly missing value of type T
+- enumerable - lazily computed list of values of type T
+- 
+
+__why exception handling using monad ?__  
+because in functional programming we cant have side effect and imperative style exception handling has side effects  
+hence use maybe(if two possibilities) or either if many..
+
+### CoMonads
+
+### Monad Transformer
 
 Functor
 -------
@@ -150,6 +175,16 @@ Kinds
 * higher kinded type is type constructor that accepts other type constructor like ```class Functor[N[_]]``` - (* -> *) -> *
 * 1st order kinded type is a type that accepts other types to create a proper type - * -> * -> *
 * proper type is a type that u can make a value of - *
+
+Continuation Passing Style Pattern
+----------------------------------
+
+CoRoutines
+----------
+
+Generator or semicoroutines
+---------------------------
+
 
 References
 ----------
