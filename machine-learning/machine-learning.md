@@ -7,23 +7,41 @@
 	- [Deep Belief Networks](#deep-belief-networks)
 	- [Deep Machine Learning](#deep-machine-learning)
 
-Machine Learning Algorithms
-===========================
-Supervised Algorithms
----------------------
+# Machine Learning Algorithms
+
+## Supervised Algorithms
 
 
-Unsupervised Algorithms
------------------------
+## Unsupervised Algorithms
+### KMeans
+a generic implementation of kmeans usually have these parameters as input
+- dataset to cluster
+- number of clusters
+- maximum number of iterations
+- empty cluster policy - ie whether to allow an empty cluster or discard them
+- distance metric - ie how to calculate distance
+- overclustering factor - ie inorder to get n clusters actually find n*f clusters and then merge where f is overlclustering factor.
+- initial partition policy - how to select initial set of clusters - kmeans++, random, or custom. This is usually provided with the number of clusters and then it internally chooses seed points hence
+- whether to pre-compute distances ?
 
-Topological data analysis
--------------------------
+results
+- centroids of clusters
+- clusters assignments ie.. dataset grouped in clusters
+- or both
 
-Deep Belief Networks
---------------------
+#### MiniBatchKMeans
+online implementation that does incremental updates of the centers position. much faster to standard batch implementation for large scale (data sample > 10K)
 
-Deep Machine Learning
----------------------
+#### Streaming KMeans
+https://issues.apache.org/jira/browse/MAHOUT-1154
 
-Deep Boltzmann Machine
+### X-Means
+
+## Topological data analysis
+
+## Deep Belief Networks
+
+## Deep Machine Learning
+
+## Deep Boltzmann Machine
 

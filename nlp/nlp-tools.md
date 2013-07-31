@@ -32,28 +32,31 @@
 	- [MaltParser](#maltparser)
 	- [Many Others](#many-others)
 
-Natural Language Processing
-===========================
+# Natural Language Processing
 
-nltk
-----
+## nltk
+
 __python__  
 
 
-Mallet
-------
+## Mallet
 __java__  
 statistical natural language processing  
 document classification  
 clustering  
-topic modelling - sampling-based implementations of LDA, Pachinko Allocation, and Hierarchical LDA  
-information extraction  
-sequence tagging  
+
+_topic modelling_
+* sampling-based implementations of LDA, Pachinko Allocation, and Hierarchical LDA
+
+_information extraction_
+
+_sequence tagging_
+* hidden markov models, maximum entropy markov models and crf
+* for applications such as NER
 numerical optimization - Limited Memory BFGS  
 transforming text document to numerical representation  
 
-Gensim
-------
+## Gensim
 __python__  
 Topic modelling  
 Memory optimized  
@@ -61,10 +64,16 @@ Distributed implementation on LDA and LSA/LSI
 Text Transformation - TfIdf, LSI, LDA, Random Projection, Hirarchical LDA(experimental)  
 Similarity Calculation  
 
-OpenNLP
--------
+## OpenNLP
 __java__  
-Tokenization  
+* Tokenization  
+	* whitespace tokenizer
+	* simple - ie sequence of same character class are tokens
+	* learnable tokenizer - a maximum entropy tokenizer - detects token boundaries based on probability model
+	* tokenization is a two stage process - first sentence detection adn then tokens within each sentence
+	* website has english token model to learn from
+	* learnable token evaluator
+	* tokenizer cross validation using KFold
 Sentence Fragmentation  
 POS tagger  
 Named entity extraction  
@@ -74,15 +83,12 @@ coreference resolution
 document categorization  
 machine learning - maximum entropy modelling  
 
-clojure-opennlp
----------------
+## clojure-opennlp
 
-SharpNLP
---------
+## SharpNLP
 c# port of OpenNLP  
 
-Pattern
--------
+## Pattern
 __python__  
 data retrieval from Google, Wikipedia, Twitte, Bing, etc  
 text analysis - Rule based shallow parser, wordnet interface  
@@ -92,8 +98,7 @@ LSA metrics
 clustering & classification  
 data visualization  
 
-MBSP
-----
+## MBSP
 __python__  
 text analysis based on TiMBL & MBT - memory based learning application  
 tokenization  
@@ -105,87 +110,110 @@ relation finding
 prepositional phrase attachement  
 trained on data from WSJ  
 
-ultraslicklsa
--------------
+## ultraslicklsa
 __python__  
 LSA module for making search queries  
 
-Semantic Measure Libraries and Toolkit
---------------------------------------
+## Semantic Measure Libraries and Toolkit
 __java__  
 Graph based similarity measures  
 
-DISCO - Distributionally related words using Co occurences
-----------------------------------------------------------
+## DISCO - Distributionally related words using Co occurences
 __java__  
 Semantic similarity using statistical measures  
 
-LingPipe
---------
+## LingPipe
 
-Opinion Finder
---------------
+## Opinion Finder
 
-Tawlk/osae
-----------
+## Tawlk/osae
 
-GATE
-----
+## GATE
 
-textir
-------
+## textir
 
-NLP Toolsuite
--------------
+## NLP Toolsuite
 
-Stanford POS
-------------
+## Stanford NLP Suite
+### Stanford NER
+- conditional random field sequence model
+- english and german
 
-Freeling
---------
+### Stanford Word Segmenter
+- CRF based word segmenter (arabic, chinese)
 
-TreeTagger
-----------
+### Stanford Classifier
+- machine learning 
+- for text categorization
+- conditional loglinear classifier (aka maximum entropy or multiclass logistic regression model)
 
-MEAD
-----
+### Stanford POS
+- maximum entropy (CMM) pos (english, arabic, chinese, french and german)
+
+### Stanfor CoreNLP
+- tokenization
+- part of speech tagging
+- ner
+- parsing
+- coreference
+
+### Stanford Parser
+- probabilistic natural language parser
+- highly optimized PCFG and dependecy parser
+- lexicalized PCFG parser
+
+### Phrasal
+- phrase based machine translation system
+
+### Stanford English Tokenizer
+- a fast, efficient and deterministic tokenizer for english text processing
+- PTBTokenizer
+- work well over Unicode Basic Multilingual Plane that doesnot require word segmentation
+
+
+### Stanford TokensRegex
+- for matching regular expressing over tokens
+
+### Stanford Temporal Tagger
+- rule-based temporal tagger
+
+### Tregex, Tsurgeon and Semgrex
+
+### Topic Modeling Toolbox
+
+## Freeling
+
+## TreeTagger
+
+## MEAD
 Text summarization open source  
 
-Kea
----
+## Kea
 Key phrase extraction  
 
-Maxent
-------
+## Maxent
 Maximum entropy models  
 
-The Dragon Toolkit
-------------------
+## The Dragon Toolkit
 document representation like - words, multiword phrases
 ontology-based concepts and concept pairs  
 text retrieval models  
 text classification clustering summarization and topic modell;ing  
 http://dragon.ischool.drexel.edu/features.asp  
 
-ScalaNLP
---------
+## ScalaNLP
 
-Boilerpipe
-----------
+## Boilerpipe
 
-pignlproc
----------
+## pignlproc
 apache pig utilities to build training corpora for machine learning/NLP out of public Wikipedia and DBPedia dumps  
 
-Apache Stanbol
---------------
+## Apache Stanbol
 set of reusable components for semantic content management  
 
-MaltParser
-----------
+## MaltParser
 system for data driven dependency parsing  
 
-Many Others
------------
+## Many Others
 http://opennlp.sourceforge.net/projects.html  
 http://boston.lti.cs.cmu.edu/clueweb09/wiki/tiki-index.php?page=ClueWeb09%20Wiki  

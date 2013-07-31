@@ -42,6 +42,13 @@ http://docs.scala-lang.org/cheatsheets/
 http://apocalisp.wordpress.com/  
 http://danielwestheide.com/scala/neophytes.html  
 
+## Imports
+- import p._  all members of p (this is analogous to import p.* in Java).
+- import p.x  the member x of p.
+- import p.{x => a}   the member x of p renamed as a.
+- import p.{x, y} the members x and y of p.
+- import p1.p2.z  the member z of p2, itself member of p1.
+
 ## Option
 
 using option as returning result and passing parameters enables us to avoid ifs for null checks  
@@ -621,6 +628,11 @@ using(new BufferedReader(new FileReader(path))){
     f => f.readLine()
 }
 ```
+## Continuations
+[Example code](https://github.com/kghost/scala-continuation-sample/blob/master/src/main/scala/test/Main.scala)
+[Continuation monad](http://blog.tmorris.net/posts/continuation-monad-in-scala/)
+
+## ClassManifest and TypeTag
 
 ## Quirks
 

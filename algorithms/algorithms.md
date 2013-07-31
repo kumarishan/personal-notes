@@ -4,11 +4,9 @@
 	- [String Similarity](#string-similarity)
 	- [Reference](#reference)
 
-Algorithms
-==========
+# Algorithms
 
-String Similarity
------------------
+## String Similarity
 Edit Distance  
 Levenshtein distance - implemented using Wagner Fischer Algo  
 [StrikaAMatch](http://www.catalysoft.com/articles/StrikeAMatch.html)
@@ -17,6 +15,22 @@ Dice's coefficient same as StrikeAMatch
 Hamming distance  
 Jaro-Winkler distance  
 
+## Streaming Algorithms
+algorithms for processing data streams in which the input is presented as a sequence of items  
+this constraints means that an algorithms produces an approximate answer based on a summary or "sketch"
+
+### Karp-Papadimitriou-Shenker algorithm
+### Sticky Sampling
+### Lossy counting
+### Sample and Hold
+### Multistage Bloom Filters
+### Count-sketch
+### Sketch guided sampling
+### Count Min Sketch
+### HyperLogLog
+estimated how many unique items are in a set.
+### K-Minimum Values
+for counting distinct elements in a data stream
 
 Reference
 ---------
