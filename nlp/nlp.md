@@ -106,6 +106,36 @@ information retrieval
   like indexing only nouns, verbs, adjctives, adverbs, interjections, numerals. abbreviations, and participles
   leaving coordinating conjunctions, subordinating conjunctions and determiners, infinite markers, preposition and pronouns  
 
+tag corpus used for training (_see nltk corpus_)
+- brown corpus
+- treebank corpus
+- conil2000
+
+__different pos tagging algorithms__
+- NGram Tagger - u b t
+- Affix Tagger - learns prefix and suffix patterns of 
+- Regex Tagger - regex expressing from [nltk book](http://nltk.org/book/ch05.html) 
+- Brill Tagger b
+- Classifier based tagger (cpos - classifier based pos tag with naive bayes classifier) 
+  - significantly slower than raubt (sequential backoff)
+  - accuracy of cpos is same as craubt
+  - MaxEntTagger - is classifier based tagger - implemented in nltk and stanford nlp
+  - other classifier taggers use naive bayes classifier
+- HMM based tagger or statistical tagger - [TnT](http://www.coli.uni-saarland.de/~thorsten/tnt/) , hunpos
+- memory based tagger - TiMBL
+- decision based tagger
+- SVM 
+- 
+
+- using brill tagger always nearly increases accuracy over the inital tagger but not by much
+
+taggers can be chained using Sequential backoff chaining
+- one of the highest performer is chain (raubt) - regex, affix, unigram, bigram, trigram
+- if a tagger is not able to dertermine tag then its backoff tagger is consulted..
+- for example in the above .. first regex will be used if it doesnot find then affix will be used
+
+[perfromance comparision](http://streamhacker.com/2010/04/12/pos-tag-nltk-brill-classifier/)
+
 
 ## Topic or Context Analysis
 
