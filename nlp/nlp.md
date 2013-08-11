@@ -194,6 +194,22 @@ Jensen Shannon distance
 - Pos Tags used as complementary tags for training a sequence classifier (eg: a chunker)
 - 
 
+## Distributional Clustering
+[for text classification](http://blondie.cs.byu.edu/CS652/baker98distributional.pdf)  
+[for text categorrization](http://www.cs.huji.ac.il/labs/learning/Papers/sigir.pdf)  
+[BiGram HMM with CDC for unsupervised POS](http://www.aclweb.org/anthology-new/W/W10/W10-4109.pdf)  
+[Inducing Syntactic categories by context distribution clustering](http://acl.ldc.upenn.edu/W/W00/W00-0717.pdf)  
+
+### Multiway Distributional Clustering
+[souce](http://people.cs.umass.edu/~ronb/mdc.html)  
+[research paper - detailed implementation](http://people.cs.umass.edu/~ronb/papers/mdc-icml.pdf)  
+is an efficient implementation fo Comraf  
+
+## Markov Random Fields
+
+### Combinatorial markov random fields
+[source](http://people.cs.umass.edu/~ronb/papers/ecml06.pdf)  
+
 ## Reference
 http://acl.ldc.upenn.edu/P/P01/P01-1005.pdf  
 http://www.cs.cmu.edu/~nasmith/LS2/das-martins.07.pdf  

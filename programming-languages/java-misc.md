@@ -15,3 +15,10 @@ fast implementation to persist java ojects using serialization
 chill - scala extension to kryo serialization library
 -----------------------------------------------------
 __scala__
+
+Kamikaze
+--------
+for effectively compressing sorted integer arrays  
+and performing highly efficient operations on the compressed arrays or docSetIds  
+used P4Delta compression methods
+[about](http://sna-projects.com/kamikaze/)
