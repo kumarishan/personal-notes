@@ -116,7 +116,7 @@ __different pos tagging algorithms__
 - Affix Tagger - learns prefix and suffix patterns of 
 - Regex Tagger - regex expressing from [nltk book](http://nltk.org/book/ch05.html) 
 - Brill Tagger b
-- Classifier based tagger (cpos - classifier based pos tag with naive bayes classifier) 
+- Classifier based tagger (cpos - classifier based pos tag with naive bayes classifier)
   - significantly slower than raubt (sequential backoff)
   - accuracy of cpos is same as craubt
   - MaxEntTagger - is classifier based tagger - implemented in nltk and stanford nlp
@@ -124,8 +124,7 @@ __different pos tagging algorithms__
 - HMM based tagger or statistical tagger - [TnT](http://www.coli.uni-saarland.de/~thorsten/tnt/) , hunpos
 - memory based tagger - TiMBL
 - decision based tagger
-- SVM 
-- 
+- SVM
 
 - using brill tagger always nearly increases accuracy over the inital tagger but not by much
 
@@ -137,12 +136,16 @@ taggers can be chained using Sequential backoff chaining
 [perfromance comparision](http://streamhacker.com/2010/04/12/pos-tag-nltk-brill-classifier/)
 
 
+## Stemmer
+### porter Stemmer
+### Snowball
+
 ## Topic or Context Analysis
 
 ## Keyword extraction
 
 ## NER - Named Entity Recognition
-
+- CRF
 
 ## Morphological analysis
 
@@ -192,7 +195,6 @@ Jensen Shannon distance
 - tf-idf weighting used as prior to clustering and classification.
 
 - Pos Tags used as complementary tags for training a sequence classifier (eg: a chunker)
-- 
 
 ## Distributional Clustering
 [for text classification](http://blondie.cs.byu.edu/CS652/baker98distributional.pdf)  
@@ -205,10 +207,14 @@ Jensen Shannon distance
 [research paper - detailed implementation](http://people.cs.umass.edu/~ronb/papers/mdc-icml.pdf)  
 is an efficient implementation fo Comraf  
 
-## Markov Random Fields
+## Fog Index
+The Gunning readability formula also known as Fog index
 
-### Combinatorial markov random fields
-[source](http://people.cs.umass.edu/~ronb/papers/ecml06.pdf)  
+## Text Extraction
+### Table Extraction
+- CRF
+
+## Maximum Entropy Classifier or Logistic Regression
 
 ## Reference
 http://acl.ldc.upenn.edu/P/P01/P01-1005.pdf  

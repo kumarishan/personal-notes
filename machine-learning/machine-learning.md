@@ -45,3 +45,5 @@ https://issues.apache.org/jira/browse/MAHOUT-1154
 
 ## Deep Boltzmann Machine
 
+## Instance based learning
+

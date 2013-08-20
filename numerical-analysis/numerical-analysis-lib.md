@@ -17,3 +17,8 @@ Theano
 __python__  
 evaluate mathematical expressions involving multidimensional arrays efficiently  
 differentiation  
+
+Algebird
+--------
+__scala__
+twitter library

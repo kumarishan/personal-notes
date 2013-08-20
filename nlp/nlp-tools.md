@@ -42,7 +42,13 @@ __python__
 ## Mallet
 __java__  
 statistical natural language processing  
-document classification  
+
+_document classification_
+- naive bayes
+- maximum entropy
+- decision trees
+- C45
+
 clustering  
 
 _topic modelling_
@@ -53,7 +59,7 @@ _information extraction_
 _sequence tagging_
 * hidden markov models, maximum entropy markov models and crf
 * for applications such as NER
-numerical optimization - Limited Memory BFGS  
+numerical optimization - Limited Memory BFGS (an iterative method to solve unconstrained nonlinear optimization problem)  
 transforming text document to numerical representation  
 
 ## Gensim
@@ -213,6 +219,14 @@ set of reusable components for semantic content management
 
 ## MaltParser
 system for data driven dependency parsing  
+
+### pdfssa4met
+PDF structure and syntactic analysis for Metadata Extraction and Tagging
+
+## GRMM
+## CRFSuite
+## Factorie
+## CRF++
 
 ## Many Others
 http://opennlp.sourceforge.net/projects.html  
