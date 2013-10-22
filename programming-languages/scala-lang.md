@@ -678,3 +678,4 @@ class NodeImpl extends NodeI {
 * (1.0 / 0) isInfinity, 4 to 6 = Range(4, 5, 6), "bob" capitalize, "robert" drop 2 = "bert", 0 max 5
 * to get the implicit value of a type implicitly[Type]
 * to pass a sequence to a varargs function use type ascription to _*  ```Set(values: _*)```
+* design patterns on actors and more [Let it Crash](http://letitcrash.com)

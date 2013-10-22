@@ -32,3 +32,6 @@ Backbone
 __javascript__
 provides models views for application architecture  
 history with pushState and fallback for older browser  
+
+## JParallax
+- http://stephband.info/jparallax/

@@ -24,6 +24,41 @@
 
 # Natural Language Processing
 
+## Compositionality
+a natural language expression is compositional if the meaning of the expression can be predicted from the meanings of the part
+idionms least compositional
+
+## Collocation
+an expression consisting of two or more words
+collocation extracted from technological domains - terminology extraction
+limited composibility
+uses
+- natural language generation
+- parsing (preference to natural collocations)
+- corpus linguistic research
+collocation pos filtering patterns [Technical terminology: some linguistic properties and an algorithm for identification in text]()
+ - A N
+ - N N
+ - AAN
+ - ANN
+ - NAN
+ - NNN
+ - NPN - P -> preposition
+algos
+ - frequency + filtering
+ - mean and variance using collocation window (size 9) - if mean is much greater than 1 and a low deviation indicates an interesting phrase
+ - mutual information (pointwise mutual information) - mutual information is a good indicator of independence. not a good measure of dependence. reason it depends heavily on each terms occurence. And if a term has very low frequency then it will have heigher rank. Although a cut off frequency of 3 can be used to filter them out. The pointwise mutual information measures the reduction in uncertainity about the occurence of one word when we are told the occurence of the other word.
+
+[The BBI combinatory dictionay of english](http://benjamins.com/#catalog/books/z.bbi)
+
+## Cross language Information Retrieval
+
+## Anaphora Resolution
+
+## Discourse analysis
+
+## Discourse modeling
+
 ## DataSet transformation
 ### Preprocessing of data
 
@@ -81,6 +116,19 @@ Pointwise Mutual Information
 [Semantic Measures](http://www.semantic-measures-library.org/sml/index.php?q=sml-semantic-measures)
 
 ## Word-Sense Disambiguation
+Supervised Algorithms
+- Naive Bayes classification based on words in context window
+- Information Theoritic approach - find a single reliable contextual feature that indicates which sense of the ambiguous word is being used. - Flip-Flop algorithm.
+- dictionary-based and thesaurus-based
+
+Unsupervised algorithms - sense discrimination
+- context-group discrimination/disambiguation
+
+## Text Tiling
+breaking document into topically coherent multi-paragraph subparts
+cohesion scorer - amt of topic continuity
+depth scorer - 
+boundary selector
 
 ## Chunking
 

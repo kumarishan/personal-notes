@@ -32,6 +32,12 @@ estimated how many unique items are in a set.
 ### K-Minimum Values
 for counting distinct elements in a data stream
 
+## String matching algorithms
+http://www-igm.univ-mlv.fr/~lecroq/string/index.html  
+http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.14.7176&rep=rep1&type=pdf  
+http://stackoverflow.com/questions/3183582/what-is-the-fastest-substring-search-algorithm  
+http://www.chokkan.org/software/simstring/  
+
 Reference
 ---------
 http://www.keithschwarz.com/interesting/  
