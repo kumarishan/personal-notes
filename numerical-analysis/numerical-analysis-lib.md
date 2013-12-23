@@ -3,6 +3,7 @@
 - [Numerical Calculations](#numerical-calculations)
 	- [PyAMG](#pyamg)
 	- [Theano](#theano)
+	- [Algebird](#algebird)
 
 Numerical Calculations
 ======================

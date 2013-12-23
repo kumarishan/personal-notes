@@ -3,6 +3,11 @@
 - [Java Miscellaneous Libraries](#java-miscellaneous-libraries)
 	- [Kryo - fast efficient java serialization](#kryo---fast-efficient-java-serialization)
 	- [chill - scala extension to kryo serialization library](#chill---scala-extension-to-kryo-serialization-library)
+	- [Kamikaze](#kamikaze)
+	- [Pdf](#pdf)
+		- [iText](#itext)
+		- [pdflib](#pdflib)
+			- [TET - text extaction toolkit](#tet---text-extaction-toolkit)
 
 # Java Miscellaneous Libraries
 

@@ -1,6 +1,11 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Data Structures](#data-structures)
+	- [B-K Tree](#b-k-tree)
+	- [Trie](#trie)
+		- [LOUDS-based trie](#louds-based-trie)
+		- [Compacted double-array trie](#compacted-double-array-trie)
+		- [MARISA trie](#marisa-trie)
 
 # Data Structures
 

@@ -2,6 +2,18 @@
 
 - [Algorithms](#algorithms)
 	- [String Similarity](#string-similarity)
+	- [Streaming Algorithms](#streaming-algorithms)
+		- [Karp-Papadimitriou-Shenker algorithm](#karp-papadimitriou-shenker-algorithm)
+		- [Sticky Sampling](#sticky-sampling)
+		- [Lossy counting](#lossy-counting)
+		- [Sample and Hold](#sample-and-hold)
+		- [Multistage Bloom Filters](#multistage-bloom-filters)
+		- [Count-sketch](#count-sketch)
+		- [Sketch guided sampling](#sketch-guided-sampling)
+		- [Count Min Sketch](#count-min-sketch)
+		- [HyperLogLog](#hyperloglog)
+		- [K-Minimum Values](#k-minimum-values)
+	- [String matching algorithms](#string-matching-algorithms)
 	- [Reference](#reference)
 
 # Algorithms

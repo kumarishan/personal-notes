@@ -6,6 +6,7 @@
 	- [Underscore js](#underscore-js)
 	- [Lodash](#lodash)
 	- [Backbone](#backbone)
+	- [JParallax](#jparallax)
 
 Javascript Common Utils libraries
 =================================

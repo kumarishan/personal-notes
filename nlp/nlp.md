@@ -1,16 +1,37 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [Natural Language Processing related stuffs](#natural-language-processing-related-stuffs)
+- [Natural Language Processing](#natural-language-processing)
+	- [Compositionality](#compositionality)
+	- [Collocation](#collocation)
+	- [Cross language Information Retrieval](#cross-language-information-retrieval)
+	- [Anaphora Resolution](#anaphora-resolution)
+	- [Discourse analysis](#discourse-analysis)
+	- [Discourse modeling](#discourse-modeling)
+	- [DataSet transformation](#dataset-transformation)
+		- [Preprocessing of data](#preprocessing-of-data)
+		- [Feature extraction](#feature-extraction)
+			- [Feature Hashing or hashing-trick](#feature-hashing-or-hashing-trick)
+			- [Text Feature extraction](#text-feature-extraction)
+	- [Tf-Idf term weighting](#tf-idf-term-weighting)
 	- [Semantic Similarity](#semantic-similarity)
 	- [Word-Sense Disambiguation](#word-sense-disambiguation)
+	- [Text Tiling](#text-tiling)
 	- [Chunking](#chunking)
 	- [Sentiment Analysis](#sentiment-analysis)
 	- [Part of Speech tagging - POS](#part-of-speech-tagging---pos)
+	- [Stemmer](#stemmer)
+		- [porter Stemmer](#porter-stemmer)
+		- [Snowball](#snowball)
+		- [Krovetz stemmmer](#krovetz-stemmmer)
+		- [lancaster stemmer](#lancaster-stemmer)
 	- [Topic or Context Analysis](#topic-or-context-analysis)
 	- [Keyword extraction](#keyword-extraction)
 	- [NER - Named Entity Recognition](#ner---named-entity-recognition)
 	- [Morphological analysis](#morphological-analysis)
 	- [Segmentation](#segmentation)
+		- [Word Segmentation](#word-segmentation)
+		- [Sentence Segmentation](#sentence-segmentation)
+		- [Text segmentation](#text-segmentation)
 	- [concordance: key words in context](#concordance-key-words-in-context)
 	- [Bigrams](#bigrams)
 	- [Bayesian Analysis](#bayesian-analysis)
@@ -20,6 +41,13 @@
 	- [Topic Modelling](#topic-modelling)
 	- [Divergence Calculation](#divergence-calculation)
 	- [CoReference Resolution](#coreference-resolution)
+	- [Usual steps in NLP](#usual-steps-in-nlp)
+	- [Distributional Clustering](#distributional-clustering)
+		- [Multiway Distributional Clustering](#multiway-distributional-clustering)
+	- [Fog Index](#fog-index)
+	- [Text Extraction](#text-extraction)
+		- [Table Extraction](#table-extraction)
+	- [Maximum Entropy Classifier or Logistic Regression](#maximum-entropy-classifier-or-logistic-regression)
 	- [Reference](#reference)
 
 # Natural Language Processing
@@ -187,6 +215,9 @@ taggers can be chained using Sequential backoff chaining
 ## Stemmer
 ### porter Stemmer
 ### Snowball
+### Krovetz stemmmer
+### lancaster stemmer
+[Official website](http://www.comp.lancs.ac.uk/computing/research/stemming/index.htm)
 
 ## Topic or Context Analysis
 

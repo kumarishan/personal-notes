@@ -8,6 +8,7 @@
 	- [algebird](#algebird)
 	- [spray](#spray)
 	- [twirl](#twirl)
+	- [eventsourced](#eventsourced)
 
 # Scala Miscellaneous libraries
 

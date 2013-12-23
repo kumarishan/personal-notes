@@ -3,9 +3,15 @@
 - [Machine Learning Algorithms](#machine-learning-algorithms)
 	- [Supervised Algorithms](#supervised-algorithms)
 	- [Unsupervised Algorithms](#unsupervised-algorithms)
+		- [KMeans](#kmeans)
+			- [MiniBatchKMeans](#minibatchkmeans)
+			- [Streaming KMeans](#streaming-kmeans)
+		- [X-Means](#x-means)
 	- [Topological data analysis](#topological-data-analysis)
 	- [Deep Belief Networks](#deep-belief-networks)
 	- [Deep Machine Learning](#deep-machine-learning)
+	- [Deep Boltzmann Machine](#deep-boltzmann-machine)
+	- [Instance based learning](#instance-based-learning)
 
 # Machine Learning Algorithms
 

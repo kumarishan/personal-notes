@@ -1,3 +1,14 @@
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [Graphical Models](#graphical-models)
+	- [Conditional Random Field CRF](#conditional-random-field-crf)
+		- [Linar chain CRFs](#linar-chain-crfs)
+		- [General CRF](#general-crf)
+	- [Factor Graphs](#factor-graphs)
+	- [Markov Random Fields](#markov-random-fields)
+		- [Combinatorial markov random fields](#combinatorial-markov-random-fields)
+	- [Difference between generative and discriminative models](#difference-between-generative-and-discriminative-models)
+
 # Graphical Models
 
 ## Conditional Random Field CRF

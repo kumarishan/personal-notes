@@ -1,6 +1,7 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Scala Language](#scala-language)
+	- [Imports](#imports)
 	- [Option](#option)
 	- [Array](#array)
 	- [Control Structures](#control-structures)
@@ -33,6 +34,8 @@
 		- [Applicative](#applicative)
 	- [Array](#array-1)
 	- [Control Structures](#control-structures-1)
+	- [Continuations](#continuations)
+	- [ClassManifest and TypeTag](#classmanifest-and-typetag)
 	- [Quirks](#quirks)
 
 # Scala Language

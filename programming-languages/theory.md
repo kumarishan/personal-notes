@@ -1,4 +1,4 @@
-**Table of Contents**
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [Programming languages theoritical concepts](#programming-languages-theoritical-concepts)
 	- [polymorphism](#polymorphism)
@@ -11,13 +11,25 @@
 	- [pure functions](#pure-functions)
 	- [referential transparency](#referential-transparency)
 	- [Type Class](#type-class)
+	- [Type](#type)
+	- [Type Constructor](#type-constructor)
 	- [Monoid](#monoid)
 	- [Monad](#monad)
+		- [CoMonads](#comonads)
+		- [Monad Transformer](#monad-transformer)
+	- [Kleisli compostion](#kleisli-compostion)
 	- [Functor](#functor)
 	- [higher order fucntions](#higher-order-fucntions)
 	- [Lambda Calculus](#lambda-calculus)
 	- [Sequence Point](#sequence-point)
+	- [Reification](#reification)
 	- [Kinds](#kinds)
+	- [Continuation Passing Style Pattern](#continuation-passing-style-pattern)
+		- [Continuation](#continuation)
+	- [CoRoutines](#coroutines)
+	- [Generator or semicoroutines](#generator-or-semicoroutines)
+	- [Communicating Sequential Process](#communicating-sequential-process)
+	- [Polytypic Programming](#polytypic-programming)
 	- [References](#references)
 
 # Programming languages theoritical concepts
